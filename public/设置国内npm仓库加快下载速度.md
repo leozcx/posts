@@ -38,7 +38,7 @@ npmrc “配置名”
 ```
 npmrc -r cn
 ```
-执行`npm config get registry` 发现设置的是 http://r.cnpmjs.org/ ，google了一下，貌似这是国人发起的私有npm项目，而它的国内镜像指向的就是淘宝。
+执行`npm config get registry` 发现设置的是 http://r.cnpmjs.org/ ，google了一下，貌似这是国人发起的私有npm项目，而它的国内镜像指向的就是淘宝。 
 这种设置更简单。
 
 ## 问题

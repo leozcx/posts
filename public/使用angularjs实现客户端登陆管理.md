@@ -18,7 +18,7 @@ Set-Cookie: <name>=<value>[; <name>=<value>]...
 ```
 Set-Cookie头包含key-value对，多对以分号分隔；如此之外，还可包含以下几个可选信息： 
 - expires=<date> 表示cookie的过期时间，以如下格式设置：DAY, DD-MMM-YYYY HH:MM:SS GMT，比如expires=Fri, 31-Dec-2010 23:59:59 GMT。注意，不是我们常用的用一串数字表示时间。如果省略则页面关闭cookie就会被清除。  
- - domain和path用来告诉浏览器什么时候需要发送cookie。比如`domain="abc.web.com"` 则只有用户请求“abc.web.com"的时候cookie才被设置；`domain="web.com"` 则告诉浏览器请求"web.com"及所有子域名的时候都要设置cookie；`domain="abc.web.com"; path="images"`， 只有在请求"abc.web.com/images" 的时候才设置cookie 
+- domain和path用来告诉浏览器什么时候需要发送cookie。比如`domain="abc.web.com"` 则只有用户请求“abc.web.com"的时候cookie才被设置；`domain="web.com"` 则告诉浏览器请求"web.com"及所有子域名的时候都要设置cookie；`domain="abc.web.com"; path="images"`， 只有在请求"abc.web.com/images" 的时候才设置cookie 
 - secure 如果存在，则只有请求https网页的时候才会设置；
 - httponly 表示该cookie只被用于http请求，即js代码无法读取该cookie
 

@@ -18,7 +18,7 @@ Set-Cookie: <name>=<value>[; <name>=<value>]...
 ```
 Set-Cookie头包含key-value对，多对以分号分隔；如此之外，还可包含以下几个可选信息： 
 - expires=<date> 表示cookie的过期时间，以如下格式设置：DAY, DD-MMM-YYYY HH:MM:SS GMT，比如expires=Fri, 31-Dec-2010 23:59:59 GMT。注意，不是我们常用的用一串数字表示时间。如果省略则页面关闭cookie就会被清除。  
-- domain和path用来告诉浏览器什么时候需要发送cookie。比如`domain="abc.web.com"` 则只有用户请求“abc.web.com"的时候cookie才被设置；`domain="web.com"` 则告诉浏览器请求"web.com"及所有子域名的时候都要设置cookie；`domain="abc.web.com"; path="images"`， 只有在请求"abc.web.com/images" 的时候才设置cookie 
+- domain和path用来告诉浏览器什么时候需要发送cookie。比如domain="abc.web.com" 只有用户请求“abc.web.com"的时候cookie才被设置；`domain="web.com"` 则告诉浏览器请求"web.com"及所有子域名的时候都要设置cookie；`domain="abc.web.com"; path="images"`， 只有在请求"abc.web.com/images" 的时候才设置cookie 
 - secure 如果存在，则只有请求https网页的时候才会设置；
 - httponly 表示该cookie只被用于http请求，即js代码无法读取该cookie
 
@@ -27,7 +27,17 @@ Cookies的格式很简单，就是key-value对：
 Cookie: <name>=<value> [;<name>=<value>]...
 ```
 那么如何来设置cookie呢？通常是由server端来设的，即在响应头中设置Set-Cookie。一般的语言都有相应的设置方法，这里不多说。还可以在浏览器端用js来设置，一般的前端框架也有相应的方法，具体可以查看对应文档。
-
+### localStorage, sessoinStorage
+HTML5引入了新的客户端存储机制，称为web storage，用于存储key-value对，这里的key和value都是string。相对于cookie，web storage提供了更大的存储空间（5M）。
+web storage在window命名空间内提供了2种storage: localStorage, sessionStorage:
+- localStorage 存在localStorage中的变量不会过期，即使关闭浏览器数据也一直存在；
+- sessionStorage 只在一个session中有效，随着页面所在tab关闭而失效。
+除了有效时间外这2个变量有同样的方法：
+- storage.key()
+- storage.setItem(key, value)
+- storage.getItem(key)
+- storage.removeItem(key)
+- storage.clear()
 
 ## 服务器端
 
@@ -35,3 +45,4 @@ Cookie: <name>=<value> [;<name>=<value>]...
 > http://jerryzou.com/posts/cookie-and-web-storage/
 > http://diveintohtml5.info/storage.html
 > http://code.tutsplus.com/tutorials/an-introduction-to-cookies--net-12482
+> http://www.w3.org/TR/webstorage/

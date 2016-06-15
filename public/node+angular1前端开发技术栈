@@ -2,7 +2,7 @@ node + Angular1前端开发技术栈
 
 - 应用框架生成：yo
 - build工具：gulp
-    - html/css/js 合并压缩
+	- html/css/js 合并压缩
 	- cache buster
 	- 依赖自动注入
 	- 开发，生产环境分离

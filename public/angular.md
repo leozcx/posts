@@ -1,6 +1,13 @@
-#angular source code learning
-angular.bootstrap(domContentLoad event)
-walk through dom tree
-- load modules
-- create injector
-- compile
+node + Angular1前端开发技术栈
+
+- 应用框架生成：yo
+- build工具：gulp
+	- html/css/js 合并压缩
+	- cache buster
+	- 依赖自动注入
+	- 开发，生产环境分离
+- 依赖管理工具：bower
+- 轻量级开发测试server: browserSync
+	- serve html/js/css/images...
+	- fake response
+	- proxy
